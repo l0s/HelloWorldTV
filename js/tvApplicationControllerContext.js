@@ -21,7 +21,13 @@ App.onLaunch = function( options )
     // navigationDocument.pushDocument( request.responseXML );
     var parser = new DOMParser();
     var document = parser.parseFromString( request.responseXML, "application/xml" );
-    document.addEventListener( "select", playVideo, false );
+    var buttons = document.getElementsByTagName( "button" );
+    for( var i = 0; i < buttons.length; i++ )
+    {
+    	var button = buttons[ i ];
+    	button.addEventListener( "select", playVideo, false );
+    }
+    // document.addEventListener( "select", playVideo, false );
     navigationDocument.pushDocument( document );
   };
   request.addEventListener( "load", responseHandler, false );
