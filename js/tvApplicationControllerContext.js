@@ -1,6 +1,6 @@
 function pushDocument( document )
 {
-  navigationDocument.pushDocument( document )
+  navigationDocument.pushDocument( document );
 }
 
 function getDocument( url )
@@ -9,6 +9,7 @@ function getDocument( url )
   request.responseType = "document";
   var responseHandler = function()
   {
+    console.log( "Handling document" );
     pushDocument( request.responseXML );
   };
   request.addEventListener( "load", responseHandler, false );
@@ -22,10 +23,10 @@ App.onLaunch = function( options )
 {
   console.log( 'App launching' );
   var url = "https://l0s.github.io/HelloWorldTV/template/index.tvml";
-  getDocument( url )
-}
+  getDocument( url );
+};
 
 App.onExit = function()
 {
   console.log( 'App exiting' );
-}
+};
