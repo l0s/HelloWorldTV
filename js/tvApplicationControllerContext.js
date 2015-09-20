@@ -10,8 +10,10 @@ function getDocument( url )
   var responseHandler = function()
   {
     pushDocument( request.responseXML );
-  }
+  };
   request.addEventListener( "load", responseHandler, false );
+
+  request.open( "GET", url, true );
   request.send();
   return request;
 }
