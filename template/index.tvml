@@ -1,0 +1,12 @@
+<document>
+  <alertTemplate>
+    <title>Are you sure you would like to continue?</title>
+    <description>This is the reason you may or may not.</description>
+    <button>
+      <text>Continue</text>
+    </button>
+    <button>
+      <text>Cancel</text>
+    </button>
+  </alertTemplate>
+<document>
