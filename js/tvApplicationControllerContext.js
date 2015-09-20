@@ -1,8 +1,3 @@
-function pushDocument( document )
-{
-  navigationDocument.pushDocument( document );
-}
-
 function getDocument( url )
 {
   var request = new XMLHttpRequest();
@@ -10,7 +5,7 @@ function getDocument( url )
   var responseHandler = function()
   {
     console.log( "Handling document" );
-    pushDocument( request.responseXML );
+    navigationDocument.pushDocument( request.responseXML );
   };
   request.addEventListener( "load", responseHandler, false );
 
